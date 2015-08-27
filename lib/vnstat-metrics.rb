@@ -1,0 +1,1 @@
+require 'vnstat-metrics/version'
