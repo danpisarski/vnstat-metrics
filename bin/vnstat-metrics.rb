@@ -60,13 +60,13 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
       scaled_throughput = Regexp.last_match(1).to_f
       scale      = Regexp.last_match(2)
 
-      case scale
+      case scale.downcase
       when 'kbit/s'
-        throughput = scaled_throughput
-      when 'mbit/s'
         throughput = scaled_throughput * 1000
-      when 'gbit/s'
+      when 'mbit/s'
         throughput = scaled_throughput * 1000 * 1000
+      when 'gbit/s'
+        throughput = scaled_throughput * 1000 * 1000 * 1000
       end
 
       output "#{config[:scheme]}.#{config[:interface]}.#{key}", throughput
