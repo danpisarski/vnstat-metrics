@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.email                  = 'me@danpisarski.com'
   s.executables            = Dir.glob('bin/**/*').map { |file| File.basename(file) }
   s.files                  = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
-  s.homepage               = ''
+  s.homepage               = 'http://github.com/danpisarski/vnstat-metrics'
   s.license                = 'MIT'
   s.name                   = 'vnstat-metrics'
   s.platform               = Gem::Platform::RUBY
